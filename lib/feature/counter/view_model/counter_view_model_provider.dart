@@ -7,14 +7,5 @@ final counterViewModelProvider =
     StateNotifierProvider.autoDispose<CounterViewModel, CounterViewState>(
         (ref) {
   final repo = ref.watch(counterRepositoryProvider);
-  int initialCount = 0;
-  Future(
-    () async {
-      initialCount = await repo.getCount();
-    },
-  );
-  return CounterViewModel(
-    repo,
-    initialCount,
-  );
+  return CounterViewModel(repo);
 });

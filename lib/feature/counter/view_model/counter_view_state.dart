@@ -6,6 +6,6 @@ part 'counter_view_state.freezed.dart';
 class CounterViewState with _$CounterViewState {
   const factory CounterViewState({
     required String title,
-    required int count,
+    @Default(0) int count,
   }) = _CounterViewState;
 }

@@ -103,11 +103,12 @@ class __$$_CounterViewStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CounterViewState implements _CounterViewState {
-  const _$_CounterViewState({required this.title, required this.count});
+  const _$_CounterViewState({required this.title, this.count = 0});
 
   @override
   final String title;
   @override
+  @JsonKey()
   final int count;
 
   @override
@@ -136,8 +137,7 @@ class _$_CounterViewState implements _CounterViewState {
 
 abstract class _CounterViewState implements CounterViewState {
   const factory _CounterViewState(
-      {required final String title,
-      required final int count}) = _$_CounterViewState;
+      {required final String title, final int count}) = _$_CounterViewState;
 
   @override
   String get title;
