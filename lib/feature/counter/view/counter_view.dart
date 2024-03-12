@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_sample/feature/counter/view_model/counter_view_model_provider.dart';
+import 'package:flutter_mvvm_sample/feature/counter/view_model/counter_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CounterView extends ConsumerStatefulWidget {
@@ -13,9 +13,7 @@ class _CounterViewState extends ConsumerState<CounterView> {
   @override
   void initState() {
     super.initState();
-
-    final notifier = ref.read(counterViewModelProvider.notifier);
-    notifier.fetch();
+    ref.read(counterViewModelProvider.notifier).fetch();
   }
 
   @override

@@ -12,7 +12,7 @@ part of 'counter_view_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$CounterViewState {
@@ -63,22 +63,22 @@ class _$CounterViewStateCopyWithImpl<$Res, $Val extends CounterViewState>
 }
 
 /// @nodoc
-abstract class _$$_CounterViewStateCopyWith<$Res>
+abstract class _$$CounterViewStateImplCopyWith<$Res>
     implements $CounterViewStateCopyWith<$Res> {
-  factory _$$_CounterViewStateCopyWith(
-          _$_CounterViewState value, $Res Function(_$_CounterViewState) then) =
-      __$$_CounterViewStateCopyWithImpl<$Res>;
+  factory _$$CounterViewStateImplCopyWith(_$CounterViewStateImpl value,
+          $Res Function(_$CounterViewStateImpl) then) =
+      __$$CounterViewStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, int count});
 }
 
 /// @nodoc
-class __$$_CounterViewStateCopyWithImpl<$Res>
-    extends _$CounterViewStateCopyWithImpl<$Res, _$_CounterViewState>
-    implements _$$_CounterViewStateCopyWith<$Res> {
-  __$$_CounterViewStateCopyWithImpl(
-      _$_CounterViewState _value, $Res Function(_$_CounterViewState) _then)
+class __$$CounterViewStateImplCopyWithImpl<$Res>
+    extends _$CounterViewStateCopyWithImpl<$Res, _$CounterViewStateImpl>
+    implements _$$CounterViewStateImplCopyWith<$Res> {
+  __$$CounterViewStateImplCopyWithImpl(_$CounterViewStateImpl _value,
+      $Res Function(_$CounterViewStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_CounterViewStateCopyWithImpl<$Res>
     Object? title = null,
     Object? count = null,
   }) {
-    return _then(_$_CounterViewState(
+    return _then(_$CounterViewStateImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_CounterViewStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CounterViewState implements _CounterViewState {
-  const _$_CounterViewState({required this.title, this.count = 0});
+class _$CounterViewStateImpl implements _CounterViewState {
+  const _$CounterViewStateImpl({required this.title, this.count = 0});
 
   @override
   final String title;
@@ -117,10 +117,10 @@ class _$_CounterViewState implements _CounterViewState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CounterViewState &&
+            other is _$CounterViewStateImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.count, count) || other.count == count));
   }
@@ -131,13 +131,14 @@ class _$_CounterViewState implements _CounterViewState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CounterViewStateCopyWith<_$_CounterViewState> get copyWith =>
-      __$$_CounterViewStateCopyWithImpl<_$_CounterViewState>(this, _$identity);
+  _$$CounterViewStateImplCopyWith<_$CounterViewStateImpl> get copyWith =>
+      __$$CounterViewStateImplCopyWithImpl<_$CounterViewStateImpl>(
+          this, _$identity);
 }
 
 abstract class _CounterViewState implements CounterViewState {
   const factory _CounterViewState(
-      {required final String title, final int count}) = _$_CounterViewState;
+      {required final String title, final int count}) = _$CounterViewStateImpl;
 
   @override
   String get title;
@@ -145,6 +146,6 @@ abstract class _CounterViewState implements CounterViewState {
   int get count;
   @override
   @JsonKey(ignore: true)
-  _$$_CounterViewStateCopyWith<_$_CounterViewState> get copyWith =>
+  _$$CounterViewStateImplCopyWith<_$CounterViewStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
