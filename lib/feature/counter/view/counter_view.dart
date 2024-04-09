@@ -18,11 +18,11 @@ class _CounterViewState extends ConsumerState<CounterView> {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = ref.watch(counterViewModelProvider);
+    final state = ref.watch(counterViewModelProvider);
     final notifier = ref.watch(counterViewModelProvider.notifier);
     return Scaffold(
       appBar: AppBar(
-        title: Text(viewModel.title),
+        title: Text(state.title),
       ),
       body: Center(
         child: Column(
@@ -32,7 +32,7 @@ class _CounterViewState extends ConsumerState<CounterView> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${viewModel.count}',
+              '${state.count}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
